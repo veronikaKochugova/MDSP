@@ -6,7 +6,7 @@ def print_matrix(name, shape, values):
     # np.savetxt("{name}.csv".format(name=name), values, delimiter=",")
 
 
-def method1(h, x):
+def method1(y, filter):
     x_row = x.shape[0]
     x_col = x.shape[1]
     h_row = h.shape[0]
@@ -53,9 +53,9 @@ if __name__ == '__main__':
     y[6,5] = 400
     y[8,9] = 400
     print_matrix("Y with noise", y.shape, y)
-
+    filter = np.matrix([[3,2,1],[2,4,2],[1,2,3]])
     print("=============================== Method 1 ===============================")
-    # y = method1(h, x)
+    y = method1(y, filter)
     # print_matrix("Y", y.shape, y)
     print("=============================== Method 2 ===============================")
     # y = method2(h, x)
