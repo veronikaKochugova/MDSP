@@ -60,6 +60,6 @@ if __name__ == '__main__':
     print_matrix("Delta1", delta.shape, delta)
     print("=============================== Method 2 ===============================")
     y2 = method2(y.copy(), 1.26)
-    delta = abs(y - y1)
+    delta = abs(y - y2)
     print_matrix("Y2", y2.shape, y2)
     print_matrix("Delta2", delta.shape, delta)
