@@ -55,11 +55,11 @@ if __name__ == '__main__':
     print_matrix("Filter", filter.shape, filter)
     print("=============================== Method 1 ===============================")
     y1 = method1(y.copy(), filter)
-    delta = abs(y - y1)
+    delta = y1 - y
     print_matrix("Y1", y1.shape, y1)
     print_matrix("Delta1", delta.shape, delta)
     print("=============================== Method 2 ===============================")
     y2 = method2(y.copy(), 1.26)
-    delta = abs(y - y2)
+    delta = y2 - y
     print_matrix("Y2", y2.shape, y2)
     print_matrix("Delta2", delta.shape, delta)
