@@ -48,18 +48,19 @@ if __name__ == '__main__':
     y = np.genfromtxt('../lab2/Y.csv', delimiter=',')
     print_matrix("Y", y.shape, y)
     # add noise
-    y[6, 5] = 400
-    y[8, 9] = 400
-    print_matrix("Y with noise", y.shape, y)
+    y_with_noise = y.copy()
+    y_with_noise[6, 5] = 400
+    y_with_noise[8, 9] = 400
+    print_matrix("Y with noise", y_with_noise.shape, y_with_noise)
     filter = (1 / 19) * np.matrix([[3, 2, 1], [2, 4, 2], [1, 2, 3]])
     print_matrix("Filter", filter.shape, filter)
     print("=============================== Method 1 ===============================")
-    y1 = method1(y.copy(), filter)
-    delta = y1 - y
+    y1 = method1(y_with_noise.copy(), filter)
+    delta = y - y1
     print_matrix("Y1", y1.shape, y1)
     print_matrix("Delta1", delta.shape, delta)
     print("=============================== Method 2 ===============================")
-    y2 = method2(y.copy(), 1.26)
-    delta = y2 - y
+    y2 = method2(y_with_noise.copy(), 1.26)
+    delta = y - y2
     print_matrix("Y2", y2.shape, y2)
     print_matrix("Delta2", delta.shape, delta)
